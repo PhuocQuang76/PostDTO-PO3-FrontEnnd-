@@ -1,0 +1,55 @@
+<div class="container create-post-container">
+  <div class="col post-card mb-4 card">
+        <form class="create-post-form" >
+
+            <div class="mb-3">
+                <textarea type="text" class="form-control" [(ngModel)]="addPost.body" name="create-post"
+                id="create-post" placeholder="What's Poppin'?" required></textarea>
+                <p class = "error" *ngIf="show"><strong>Please input a text body.</strong></p>
+            </div>
+            <div class="submit create-post_submit-btn">
+              <button id="create-post-btn" class="btn-rounded" type="submit" (click)="createPost()">Post</button>
+
+
+
+
+              <label for="imgURL" class="create-post_image-upload">
+                <input
+                  [disabled]="displayAddImage"
+                  id="imgURL"
+                  name="imgURL"
+                  type='file'
+                  (change)="onSelectFile($event)">
+                <fa-icon class="nav-icon" [icon]="faImage"></fa-icon> Add Image
+                <fa-icon class="create-post_ui-icon" [icon]="faCheckCircle" *ngIf="uploadDesired"></fa-icon>
+              </label>
+
+              <label for="videoURL" class="create-post_image-upload">
+
+                <a href="https://www.youtube.com" target="_blank">
+                  <img  alt="post image" src="./assets/images/youtube-icon.png" width="100px" height="30px"/>
+                </a>
+
+                <input
+                  id="videoURL"
+
+                  style="width: 300px; height:28px; font-size: small;font-style: italic "
+                  name="videoURL" type='url'
+                  placeholder="embed youtube Url here"
+                  #videoURL>
+                <button
+                  [disabled]= "displayAddVideo"
+                  id="videoAddButton"
+                  type="submit"
+                  (click)="onSelectUrl(videoURL)">Add</button>
+                <fa-icon class="create-post_ui-icon" [icon]="faCheckCircle" *ngIf="videoUploadDesired"></fa-icon>
+              </label>
+
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+<div class="view-container">
+    <nav-bar></nav-bar>
+
+    <div class="posts-container">
+      <app-search></app-search>
+      <div
+          class="
+            feed-container
+            container-fluid
+            d-flex
+            flex-column
+            align-items-center
+          "
+          infiniteScroll
+          [infiniteScrollDistance]="2"
+          [infiniteScrollThrottle]="50"
+          (scrolled)="onScroll()"
+          [scrollWindow]="false">
+          <app-create-post class="col"></app-create-post>
+          <app-post-feed [posts]="posts" class="col"></app-post-feed>
+          <button (click)="showMore()" class="btn-rounded" style="margin: 10px auto;">show more</button >
+        </div>
+    </div>
+</div>

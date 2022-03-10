@@ -1,0 +1,19 @@
+.button-container{
+  display: flex;
+}
+
+/* Like Button */
+.like-component-container {
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.like-icon {
+  color: var(--revature-orange);
+  font-size: 14pt;
+  margin-right: 4px;
+}
+.num-likes {
+  padding: 3px 0px 0px 3px;
+}
